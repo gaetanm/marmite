@@ -7,7 +7,7 @@ module Frigo
     attr_reader :name, :description, :picture, :link
 
     class << self
-      def search(ingredient, type = nil)
+      def find(ingredient, type = nil)
         ingredient = P_INGREDIENT + ingredient
         type = P_TYPE + type
         page = HTTParty.get(SEARCH_URL+ingredient+'&'+type)
