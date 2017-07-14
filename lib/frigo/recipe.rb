@@ -10,9 +10,9 @@ module Frigo
 
     class << self
       def find(ingredient, type = nil)
-        ingredient = P_INGREDIENT + ingredient
+        ingredient = P_INGREDIENT + ingredient.gsub(' ', '-')
         type = P_TYPE + type
-        page = HTTParty.get(SEARCH_URL+ingredient+'&'+type)
+        page = HTTParty.get(URI.parse(URI.encode(SEARCH_URL+ingredient+'&'+type)))
         build_from_links(retrieve_link(Nokogiri::HTML(page)))
       end
 
