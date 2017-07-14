@@ -32,7 +32,7 @@ module Frigo
         pp = Nokogiri::HTML(page)
         data[:name] = pp.css('.main-title').text.strip
         data[:author] = pp.css('.recipe-author__name').text.strip
-        data[:picture] =  pp.css('#af-diapo-desktop-0_img')[0][:src]
+        data[:picture] = retrieve_picture(pp)
         data[:link] = link
         data[:preparation_time] = pp.css('.recipe-infos__timmings__preparation').css('.recipe-infos__timmings__value').text.strip
         data[:cooking_time] = pp.css('.recipe-infos__timmings__cooking').css('.recipe-infos__timmings__value').text.strip
@@ -40,6 +40,11 @@ module Frigo
         data[:steps] = pp.css('.recipe-preparation__list__item').map(&:text)
         data[:ingredients] = pp.css('.recipe-ingredients__list__item').map(&:text).map(&:strip)
         data
+      end
+
+      def retrieve_picture(parsed_page)
+        node = parsed_page.css('#af-diapo-desktop-0_img')
+        node[0][:src] if node && node[0]
       end
     end
 
