@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "frigo/version"
+require "./marmite/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "frigo"
-  spec.version       = Frigo::VERSION
+  spec.name          = "marmite"
+  spec.version       = Marmite::VERSION
   spec.authors       = ["Gaëtan Masson"]
   spec.email         = ["im.gaetanmasson@gmail.com"]
 

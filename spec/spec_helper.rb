@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "frigo"
+require "marmite"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

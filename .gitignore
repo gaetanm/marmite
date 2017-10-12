@@ -9,7 +9,8 @@
 /tmp/
 
 /.idea/*
-frigo-*.gem
+marmite
+marmite-*.gem
 
 # rspec failure tracking
 .rspec_status

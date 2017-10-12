@@ -1,14 +1,14 @@
 require "spec_helper"
 
-RSpec.describe Frigo::Recipe do
+RSpec.describe Marmite::Recipe do
   describe '.find' do
     it 'returns 10 recipes' do
-      recipes = Frigo::Recipe.find('abricot', 'entree')
+      recipes = Marmite::Recipe.find('abricot', 'entree')
       expect(recipes.count).to eql(10)
     end
 
     it 'fills the returned recipes' do
-      recipe = Frigo::Recipe.find('fraise', 'dessert').first
+      recipe = Marmite::Recipe.find('fraise', 'dessert').first
       expect(recipe).to have_attributes(
         name: 'Tiramisu aux fraises',
         author: 'Anonyme',

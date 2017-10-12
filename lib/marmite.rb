@@ -1,10 +1,10 @@
-require 'frigo/version'
+require 'marmite/version'
 require 'httparty'
 require 'nokogiri'
 
-module Frigo
+module Marmite
   ROOT_URL = 'http://www.marmiton.org'
   DISH_TYPES = %w[entree platprincipal dessert amusegueule boisson sauce]
 end
 
-require 'frigo/recipe'
+require 'marmite/recipe'
